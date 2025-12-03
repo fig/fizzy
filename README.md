@@ -1,8 +1,41 @@
 # Fizzy
 
-This is the source code of [Fizzy](https://fizzy.do/), the Kanban tracking tool for issues and ideas by [37signals](https://37signals.com).
+This is a fork of the source code of [Fizzy](https://fizzy.do/), the Kanban tracking tool for issues and ideas by [37signals](https://37signals.com).
+
+This fork is intended to be used for educational purposes, by those wishing to study a real-world Rails application written in the DHH style. The intention is to add comprehensive comments and documentation to help new Rails developers understand how a production-grade Rails application is structured and built.
+
+For more information about Fizzy, please visit the [official website](https://fizzy.do/)
+
+This fork is not affiliated with or endorsed by 37signals.
 
 ## Development
+
+### System Requirements
+
+Before setting up Fizzy, ensure you have the following installed:
+
+- **Ruby**: (see `.ruby-version`)
+  If this is your first Ruby project, we highly recommend using a [Ruby version manager](https://www.ruby-lang.org/en/documentation/installation/#managers)
+
+- **SQLite**: 3.x for local development (default database)
+  - macOS: `brew install sqlite`
+  - Ubuntu/Debian: `apt-get install sqlite3 libsqlite3-dev`
+  - Arch: `pacman -S sqlite`
+
+- **libvips**: For image processing (`image_processing` gem)
+  - macOS: `brew install vips`
+  - Ubuntu/Debian: `apt-get install libvips`
+  - Arch: `pacman -S libvips`
+
+- **ImageMagick**: Alternative image processor
+  - macOS: `brew install imagemagick`
+  - Ubuntu/Debian: `apt-get install imagemagick`
+  - Arch: `pacman -S imagemagick`
+
+- **gitleaks**: Git security scanner (optional, for CI)
+  - macOS: `brew install gitleaks`
+  - Ubuntu/Debian: [Install from source](https://github.com/zricethezav/gitleaks#installation)
+  - Arch: `pacman -S gitleaks`
 
 ### Setting up
 
@@ -19,7 +52,7 @@ And then run the development server:
 bin/dev
 ```
 
-You'll be able to access the app in development at http://fizzy.localhost:3006.
+You'll be able to access the app in development at <http://fizzy.localhost:3006>.
 
 To login, enter `david@37signals.com` and grab the verification code from the browser console to sign in.
 
@@ -46,7 +79,7 @@ The remote CI pipeline will run tests against both SQLite and MySQL.
 
 ### Outbound Emails
 
-You can view email previews at http://fizzy.localhost:3006/rails/mailers.
+You can view email previews at <http://fizzy.localhost:3006/rails/mailers>.
 
 You can enable or disable [`letter_opener`](https://github.com/ryanb/letter_opener) to open sent emails automatically with:
 
@@ -80,7 +113,6 @@ puts "VAPID_PUBLIC_KEY=#{vapid_key.public_key}"
 
 This gem depends on some private git repositories and it is not meant to be used by third parties. But we hope it can serve as inspiration for anyone wanting to run fizzy on their own infrastructure.
 
-
 ## Contributing
 
 We welcome contributions! Please read our [style guide](STYLE.md) before submitting code.
@@ -88,4 +120,3 @@ We welcome contributions! Please read our [style guide](STYLE.md) before submitt
 ## License
 
 Fizzy is released under the [O'Saasy License](LICENSE.md).
-
